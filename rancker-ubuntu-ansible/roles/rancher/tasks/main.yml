@@ -1,6 +1,6 @@
 ---
 
 - name: Run Container of Rancher (port http. https)
-  command: docker run -d --name=rancher-server --restart=unless-stopped -p 18029:80 -p 18019:443 --privileged rancher/rancher:latest
+  command: docker run -d --name=rancher-server --restart=unless-stopped -p 80:80 -p 443:443 --privileged rancher/rancher:latest
 
 
