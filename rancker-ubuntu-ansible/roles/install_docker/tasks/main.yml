@@ -1,0 +1,43 @@
+---
+- name: Uninstall previus version of Docker
+  become: yes
+  ansible.builtin.apt:
+    name:
+      - docker 
+      - docker-engine
+      - docker.io
+      - containerd
+      - runc
+    state: absent
+
+- name: Install Docker
+  become: yes
+  ansible.builtin.apt:
+    name:
+      - docker.io
+    state: present
+
+- name: Ensure group "docker" exists with correct gid
+  ansible.builtin.group:
+    name: docker
+    state: present
+    gid: 1750
+
+- name: Create Docker group
+  become: yes
+  command: usermod -aG docker $USER
+
+#- name: Activate changes
+#  become: yes
+#  command: newgrp docker
+#  ignore_errors: yes
+
+- name: Make sure a service unit is running
+  ansible.builtin.systemd:
+    state: started
+    name: docker
+
+- name: Enable service docker
+  ansible.builtin.systemd:
+    name: docker
+    enabled: yes
