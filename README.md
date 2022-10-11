@@ -1,6 +1,6 @@
 - [What is Rancher?](#what-is-rancher-)
   * [Prerequisites](#prerequisites)
-  * [Let`s Go!](#let-s-go-)
+  * [Let's Go!](#let-s-go-)
   * [WebUI access](#webui-access)
 
 # What is Rancher?
@@ -13,7 +13,7 @@ Before you embark on this guide, here is what you need.
 * An instance of Ubuntu 20.04 with SSH access
 * A regular user configured with sudo privileges
 * 2 CPU Core & 4 GB RAM
-## Let`s Go!
+## Let's Go!
 
 First, go to your Seed node.
 
