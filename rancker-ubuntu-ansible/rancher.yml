@@ -5,5 +5,5 @@
     - name: Import global handlers
       import_tasks: handlers/global_handlers.yml  
   roles:
-    # funciona - install_docker
+    - install_docker
     - rancher
